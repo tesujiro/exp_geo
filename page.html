@@ -1,0 +1,27 @@
+<html>
+
+<div id="svg-library"></div>
+
+<body>
+shopping-cart!!
+<svg>
+    shopping-cart
+    <use xlink:href="#shopping-cart"/>
+</svg>
+
+<script type="text/javascript">
+$(function() {
+    $(document).ready(function() {
+        $.ajax({
+               type: 'GET',
+               url: 'img/svg.html',
+               dataType: 'html',
+               success: function(data) {
+                   $('#svg-library').append(data);
+               }
+        });
+    });
+});
+</script>
+</body>
+</html>
