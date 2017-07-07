@@ -1,12 +1,17 @@
 <html>
 
-<div id="svg-library"></div>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 
-<body>
 shopping-cart!!
+<div id="svg-library"></div>
 <svg>
-    shopping-cart
-    <use xlink:href="#shopping-cart"/>
+    <use xlink:href="#shopping-cart" />
+</svg>
+<br>
+
+windows!!
+<svg>
+    <use xlink:href="#s"/>
 </svg>
 
 <script type="text/javascript">
@@ -14,14 +19,15 @@ $(function() {
     $(document).ready(function() {
         $.ajax({
                type: 'GET',
-               url: 'img/svg.html',
+               url: 'svg.html',
                dataType: 'html',
                success: function(data) {
                    $('#svg-library').append(data);
+                   var svg = $(data).find('svg');
+                   $('body').prepend(svg);
                }
         });
     });
 });
 </script>
-</body>
 </html>
